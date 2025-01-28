@@ -98,7 +98,7 @@ Error Handling Examples:
 ## Time Expectation
 - Aim to spend 1-2 hours on this assignment
 - Focus on core functionality first
-- Document any additional features you would add with more time
+- Document any additional features you would add with more time 
 
 ## Submission
 1. Create a branch in this repository with the format `submission-firstname-lastname`
