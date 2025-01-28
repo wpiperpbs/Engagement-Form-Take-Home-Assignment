@@ -9,7 +9,7 @@
   - Windows: Command Prompt, PowerShell, or Git Bash
 
 ## Background
-You'll be working with a simplified version of a real-world feature from our application. The form collects key metrics about user engagement, including their subscription status, engagement level, and activity dates. This data helps us understand user behavior and engagement patterns.
+You'll be working on a simplified feature similar to our real-world Deal Management application. The form collects key metrics about user engagement, including their churn status, engagement level, and activity dates.
 
 ## Getting Started
 
@@ -101,12 +101,23 @@ Error Handling Examples:
 - Document any additional features you would add with more time
 
 ## Submission
-1. Create a new repository with your solution
-2. Include a README with:
-   - Setup instructions
-   - Any assumptions made
-   - Additional features you would add with more time
-   - Any other relevant notes
+1. Create a branch in this repository with the format `submission-firstname-lastname`
+2. Implement your solution in this branch
+3. When ready to submit:
+   - Ensure all your changes are committed
+   - Create a Pull Request from your branch to `main`
+   - In your PR description, include:
+     - Setup instructions
+     - Any assumptions made
+     - Additional features you would add with more time
+     - Any other relevant notes
+4. Wait for review feedback from the team
+
+Important Notes:
+- Do not create a separate repository - work directly in a branch of this one
+- Make sure your PR title clearly includes your name
+- Do not merge your PR - the team will handle all PR management
+- Your branch will be removed after review is complete
 
 ## Evaluation Criteria
 - Clear, well-structured code
