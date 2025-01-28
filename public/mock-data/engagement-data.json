@@ -1,0 +1,802 @@
+[
+  {
+    "CustomerID": "C001",
+    "SignupDate": "2021-11-03",
+    "LastEngagementDate": "2023-03-31",
+    "EngagementScore": 11,
+    "SubscriptionType": "Premium",
+    "ChurnStatus": "False"
+  },
+  {
+    "CustomerID": "C002",
+    "SignupDate": "2021-08-03",
+    "LastEngagementDate": "2023-12-13",
+    "EngagementScore": 35,
+    "SubscriptionType": "Basic",
+    "ChurnStatus": "False"
+  },
+  {
+    "CustomerID": "C003",
+    "SignupDate": "2022-11-11",
+    "LastEngagementDate": "2023-11-11",
+    "EngagementScore": 91,
+    "SubscriptionType": "Basic",
+    "ChurnStatus": "False"
+  },
+  {
+    "CustomerID": "C004",
+    "SignupDate": "2021-03-27",
+    "LastEngagementDate": "2023-06-30",
+    "EngagementScore": 53,
+    "SubscriptionType": "Premium",
+    "ChurnStatus": "False"
+  },
+  {
+    "CustomerID": "C005",
+    "SignupDate": "2022-02-24",
+    "LastEngagementDate": "2023-02-18",
+    "EngagementScore": 2,
+    "SubscriptionType": "VIP",
+    "ChurnStatus": "False"
+  },
+  {
+    "CustomerID": "C006",
+    "SignupDate": "2021-08-02",
+    "LastEngagementDate": "2023-09-15",
+    "EngagementScore": 69,
+    "SubscriptionType": "Basic",
+    "ChurnStatus": "True"
+  },
+  {
+    "CustomerID": "C007",
+    "SignupDate": "2022-02-07",
+    "LastEngagementDate": "2023-08-09",
+    "EngagementScore": 51,
+    "SubscriptionType": "Basic",
+    "ChurnStatus": "True"
+  },
+  {
+    "CustomerID": "C008",
+    "SignupDate": "2021-01-28",
+    "LastEngagementDate": "2023-01-24",
+    "EngagementScore": 53,
+    "SubscriptionType": "VIP",
+    "ChurnStatus": "False"
+  },
+  {
+    "CustomerID": "C009",
+    "SignupDate": "2022-08-04",
+    "LastEngagementDate": "2023-01-09",
+    "EngagementScore": 61,
+    "SubscriptionType": "VIP",
+    "ChurnStatus": "True"
+  },
+  {
+    "CustomerID": "C010",
+    "SignupDate": "2022-01-21",
+    "LastEngagementDate": "2022-03-27",
+    "EngagementScore": 10,
+    "SubscriptionType": "Basic",
+    "ChurnStatus": "False"
+  },
+  {
+    "CustomerID": "C011",
+    "SignupDate": "2021-06-11",
+    "LastEngagementDate": "2021-10-17",
+    "EngagementScore": 47,
+    "SubscriptionType": "VIP",
+    "ChurnStatus": "False"
+  },
+  {
+    "CustomerID": "C012",
+    "SignupDate": "2022-06-19",
+    "LastEngagementDate": "2022-09-25",
+    "EngagementScore": 0,
+    "SubscriptionType": "Premium",
+    "ChurnStatus": "True"
+  },
+  {
+    "CustomerID": "C013",
+    "SignupDate": "2022-10-17",
+    "LastEngagementDate": "2023-07-31",
+    "EngagementScore": 41,
+    "SubscriptionType": "VIP",
+    "ChurnStatus": "True"
+  },
+  {
+    "CustomerID": "C014",
+    "SignupDate": "2021-04-29",
+    "LastEngagementDate": "2021-07-07",
+    "EngagementScore": 61,
+    "SubscriptionType": "Basic",
+    "ChurnStatus": "True"
+  },
+  {
+    "CustomerID": "C015",
+    "SignupDate": "2021-02-08",
+    "LastEngagementDate": "2023-05-17",
+    "EngagementScore": 47,
+    "SubscriptionType": "Premium",
+    "ChurnStatus": "True"
+  },
+  {
+    "CustomerID": "C016",
+    "SignupDate": "2021-05-21",
+    "LastEngagementDate": "2023-11-01",
+    "EngagementScore": 100,
+    "SubscriptionType": "VIP",
+    "ChurnStatus": "True"
+  },
+  {
+    "CustomerID": "C017",
+    "SignupDate": "2021-09-20",
+    "LastEngagementDate": "2023-03-18",
+    "EngagementScore": 71,
+    "SubscriptionType": "Premium",
+    "ChurnStatus": "True"
+  },
+  {
+    "CustomerID": "C018",
+    "SignupDate": "2021-10-10",
+    "LastEngagementDate": "2022-01-30",
+    "EngagementScore": 31,
+    "SubscriptionType": "Basic",
+    "ChurnStatus": "False"
+  },
+  {
+    "CustomerID": "C019",
+    "SignupDate": "2022-06-02",
+    "LastEngagementDate": "2022-07-31",
+    "EngagementScore": 30,
+    "SubscriptionType": "Premium",
+    "ChurnStatus": "True"
+  },
+  {
+    "CustomerID": "C020",
+    "SignupDate": "2022-01-01",
+    "LastEngagementDate": "2022-02-06",
+    "EngagementScore": 70,
+    "SubscriptionType": "Basic",
+    "ChurnStatus": "False"
+  },
+  {
+    "CustomerID": "C021",
+    "SignupDate": "2021-07-22",
+    "LastEngagementDate": "2023-03-03",
+    "EngagementScore": 49,
+    "SubscriptionType": "VIP",
+    "ChurnStatus": "False"
+  },
+  {
+    "CustomerID": "C022",
+    "SignupDate": "2022-11-24",
+    "LastEngagementDate": "2022-11-29",
+    "EngagementScore": 95,
+    "SubscriptionType": "Premium",
+    "ChurnStatus": "True"
+  },
+  {
+    "CustomerID": "C023",
+    "SignupDate": "2022-03-07",
+    "LastEngagementDate": "2022-04-01",
+    "EngagementScore": 42,
+    "SubscriptionType": "VIP",
+    "ChurnStatus": "False"
+  },
+  {
+    "CustomerID": "C024",
+    "SignupDate": "2021-02-01",
+    "LastEngagementDate": "2021-12-08",
+    "EngagementScore": 7,
+    "SubscriptionType": "VIP",
+    "ChurnStatus": "True"
+  },
+  {
+    "CustomerID": "C025",
+    "SignupDate": "2022-02-03",
+    "LastEngagementDate": "2023-03-02",
+    "EngagementScore": 59,
+    "SubscriptionType": "Basic",
+    "ChurnStatus": "True"
+  },
+  {
+    "CustomerID": "C026",
+    "SignupDate": "2021-01-21",
+    "LastEngagementDate": "2023-03-23",
+    "EngagementScore": 13,
+    "SubscriptionType": "VIP",
+    "ChurnStatus": "False"
+  },
+  {
+    "CustomerID": "C027",
+    "SignupDate": "2022-08-03",
+    "LastEngagementDate": "2023-12-14",
+    "EngagementScore": 97,
+    "SubscriptionType": "Premium",
+    "ChurnStatus": "False"
+  },
+  {
+    "CustomerID": "C028",
+    "SignupDate": "2022-08-18",
+    "LastEngagementDate": "2023-12-15",
+    "EngagementScore": 4,
+    "SubscriptionType": "Basic",
+    "ChurnStatus": "True"
+  },
+  {
+    "CustomerID": "C029",
+    "SignupDate": "2021-12-15",
+    "LastEngagementDate": "2022-08-31",
+    "EngagementScore": 39,
+    "SubscriptionType": "Basic",
+    "ChurnStatus": "True"
+  },
+  {
+    "CustomerID": "C030",
+    "SignupDate": "2021-11-13",
+    "LastEngagementDate": "2022-04-10",
+    "EngagementScore": 83,
+    "SubscriptionType": "Basic",
+    "ChurnStatus": "True"
+  },
+  {
+    "CustomerID": "C031",
+    "SignupDate": "2021-07-14",
+    "LastEngagementDate": "2022-09-15",
+    "EngagementScore": 27,
+    "SubscriptionType": "Basic",
+    "ChurnStatus": "True"
+  },
+  {
+    "CustomerID": "C032",
+    "SignupDate": "2021-01-31",
+    "LastEngagementDate": "2023-04-07",
+    "EngagementScore": 32,
+    "SubscriptionType": "Premium",
+    "ChurnStatus": "True"
+  },
+  {
+    "CustomerID": "C033",
+    "SignupDate": "2021-01-14",
+    "LastEngagementDate": "2021-09-18",
+    "EngagementScore": 91,
+    "SubscriptionType": "Basic",
+    "ChurnStatus": "False"
+  },
+  {
+    "CustomerID": "C034",
+    "SignupDate": "2022-01-25",
+    "LastEngagementDate": "2022-07-12",
+    "EngagementScore": 90,
+    "SubscriptionType": "VIP",
+    "ChurnStatus": "False"
+  },
+  {
+    "CustomerID": "C035",
+    "SignupDate": "2022-06-17",
+    "LastEngagementDate": "2023-12-08",
+    "EngagementScore": 83,
+    "SubscriptionType": "VIP",
+    "ChurnStatus": "True"
+  },
+  {
+    "CustomerID": "C036",
+    "SignupDate": "2022-08-17",
+    "LastEngagementDate": "2023-04-22",
+    "EngagementScore": 84,
+    "SubscriptionType": "Premium",
+    "ChurnStatus": "True"
+  },
+  {
+    "CustomerID": "C037",
+    "SignupDate": "2022-10-22",
+    "LastEngagementDate": "2022-12-08",
+    "EngagementScore": 9,
+    "SubscriptionType": "Basic",
+    "ChurnStatus": "False"
+  },
+  {
+    "CustomerID": "C038",
+    "SignupDate": "2022-04-02",
+    "LastEngagementDate": "2023-07-29",
+    "EngagementScore": 20,
+    "SubscriptionType": "VIP",
+    "ChurnStatus": "True"
+  },
+  {
+    "CustomerID": "C039",
+    "SignupDate": "2022-05-14",
+    "LastEngagementDate": "2022-07-16",
+    "EngagementScore": 53,
+    "SubscriptionType": "VIP",
+    "ChurnStatus": "True"
+  },
+  {
+    "CustomerID": "C040",
+    "SignupDate": "2021-09-05",
+    "LastEngagementDate": "2021-11-25",
+    "EngagementScore": 25,
+    "SubscriptionType": "Basic",
+    "ChurnStatus": "False"
+  },
+  {
+    "CustomerID": "C041",
+    "SignupDate": "2021-05-07",
+    "LastEngagementDate": "2022-06-13",
+    "EngagementScore": 12,
+    "SubscriptionType": "Basic",
+    "ChurnStatus": "False"
+  },
+  {
+    "CustomerID": "C042",
+    "SignupDate": "2022-12-19",
+    "LastEngagementDate": "2023-03-12",
+    "EngagementScore": 84,
+    "SubscriptionType": "Basic",
+    "ChurnStatus": "False"
+  },
+  {
+    "CustomerID": "C043",
+    "SignupDate": "2021-06-19",
+    "LastEngagementDate": "2023-07-21",
+    "EngagementScore": 22,
+    "SubscriptionType": "VIP",
+    "ChurnStatus": "True"
+  },
+  {
+    "CustomerID": "C044",
+    "SignupDate": "2022-11-14",
+    "LastEngagementDate": "2023-07-02",
+    "EngagementScore": 32,
+    "SubscriptionType": "VIP",
+    "ChurnStatus": "False"
+  },
+  {
+    "CustomerID": "C045",
+    "SignupDate": "2022-05-07",
+    "LastEngagementDate": "2023-08-27",
+    "EngagementScore": 49,
+    "SubscriptionType": "Premium",
+    "ChurnStatus": "True"
+  },
+  {
+    "CustomerID": "C046",
+    "SignupDate": "2021-09-17",
+    "LastEngagementDate": "2022-08-08",
+    "EngagementScore": 66,
+    "SubscriptionType": "Premium",
+    "ChurnStatus": "True"
+  },
+  {
+    "CustomerID": "C047",
+    "SignupDate": "2021-12-02",
+    "LastEngagementDate": "2022-11-17",
+    "EngagementScore": 67,
+    "SubscriptionType": "Basic",
+    "ChurnStatus": "True"
+  },
+  {
+    "CustomerID": "C048",
+    "SignupDate": "2021-10-22",
+    "LastEngagementDate": "2023-10-12",
+    "EngagementScore": 19,
+    "SubscriptionType": "Premium",
+    "ChurnStatus": "True"
+  },
+  {
+    "CustomerID": "C049",
+    "SignupDate": "2021-10-31",
+    "LastEngagementDate": "2023-04-06",
+    "EngagementScore": 50,
+    "SubscriptionType": "VIP",
+    "ChurnStatus": "False"
+  },
+  {
+    "CustomerID": "C050",
+    "SignupDate": "2021-05-06",
+    "LastEngagementDate": "2023-08-23",
+    "EngagementScore": 75,
+    "SubscriptionType": "Basic",
+    "ChurnStatus": "False"
+  },
+  {
+    "CustomerID": "C051",
+    "SignupDate": "2021-04-11",
+    "LastEngagementDate": "2023-07-08",
+    "EngagementScore": 81,
+    "SubscriptionType": "VIP",
+    "ChurnStatus": "False"
+  },
+  {
+    "CustomerID": "C052",
+    "SignupDate": "2021-05-31",
+    "LastEngagementDate": "2022-11-17",
+    "EngagementScore": 66,
+    "SubscriptionType": "Basic",
+    "ChurnStatus": "True"
+  },
+  {
+    "CustomerID": "C053",
+    "SignupDate": "2022-01-18",
+    "LastEngagementDate": "2022-07-10",
+    "EngagementScore": 65,
+    "SubscriptionType": "Premium",
+    "ChurnStatus": "True"
+  },
+  {
+    "CustomerID": "C054",
+    "SignupDate": "2021-01-19",
+    "LastEngagementDate": "2021-02-11",
+    "EngagementScore": 87,
+    "SubscriptionType": "VIP",
+    "ChurnStatus": "True"
+  },
+  {
+    "CustomerID": "C055",
+    "SignupDate": "2021-07-12",
+    "LastEngagementDate": "2023-11-07",
+    "EngagementScore": 23,
+    "SubscriptionType": "Basic",
+    "ChurnStatus": "False"
+  },
+  {
+    "CustomerID": "C056",
+    "SignupDate": "2022-09-10",
+    "LastEngagementDate": "2023-05-21",
+    "EngagementScore": 66,
+    "SubscriptionType": "VIP",
+    "ChurnStatus": "False"
+  },
+  {
+    "CustomerID": "C057",
+    "SignupDate": "2021-03-06",
+    "LastEngagementDate": "2023-06-20",
+    "EngagementScore": 3,
+    "SubscriptionType": "Basic",
+    "ChurnStatus": "False"
+  },
+  {
+    "CustomerID": "C058",
+    "SignupDate": "2021-05-09",
+    "LastEngagementDate": "2022-09-22",
+    "EngagementScore": 87,
+    "SubscriptionType": "VIP",
+    "ChurnStatus": "True"
+  },
+  {
+    "CustomerID": "C059",
+    "SignupDate": "2021-07-27",
+    "LastEngagementDate": "2022-11-07",
+    "EngagementScore": 89,
+    "SubscriptionType": "Basic",
+    "ChurnStatus": "True"
+  },
+  {
+    "CustomerID": "C060",
+    "SignupDate": "2021-03-08",
+    "LastEngagementDate": "2023-12-02",
+    "EngagementScore": 96,
+    "SubscriptionType": "Premium",
+    "ChurnStatus": "True"
+  },
+  {
+    "CustomerID": "C061",
+    "SignupDate": "2022-05-08",
+    "LastEngagementDate": "2023-06-03",
+    "EngagementScore": 85,
+    "SubscriptionType": "Basic",
+    "ChurnStatus": "False"
+  },
+  {
+    "CustomerID": "C062",
+    "SignupDate": "2022-08-17",
+    "LastEngagementDate": "2023-02-12",
+    "EngagementScore": 64,
+    "SubscriptionType": "VIP",
+    "ChurnStatus": "True"
+  },
+  {
+    "CustomerID": "C063",
+    "SignupDate": "2021-06-09",
+    "LastEngagementDate": "2021-09-19",
+    "EngagementScore": 31,
+    "SubscriptionType": "VIP",
+    "ChurnStatus": "False"
+  },
+  {
+    "CustomerID": "C064",
+    "SignupDate": "2022-09-11",
+    "LastEngagementDate": "2023-04-30",
+    "EngagementScore": 30,
+    "SubscriptionType": "Basic",
+    "ChurnStatus": "False"
+  },
+  {
+    "CustomerID": "C065",
+    "SignupDate": "2021-08-19",
+    "LastEngagementDate": "2021-09-12",
+    "EngagementScore": 4,
+    "SubscriptionType": "Premium",
+    "ChurnStatus": "True"
+  },
+  {
+    "CustomerID": "C066",
+    "SignupDate": "2022-07-07",
+    "LastEngagementDate": "2023-05-31",
+    "EngagementScore": 62,
+    "SubscriptionType": "VIP",
+    "ChurnStatus": "True"
+  },
+  {
+    "CustomerID": "C067",
+    "SignupDate": "2021-08-16",
+    "LastEngagementDate": "2022-07-09",
+    "EngagementScore": 79,
+    "SubscriptionType": "Premium",
+    "ChurnStatus": "False"
+  },
+  {
+    "CustomerID": "C068",
+    "SignupDate": "2021-11-26",
+    "LastEngagementDate": "2023-01-24",
+    "EngagementScore": 25,
+    "SubscriptionType": "Premium",
+    "ChurnStatus": "True"
+  },
+  {
+    "CustomerID": "C069",
+    "SignupDate": "2021-05-23",
+    "LastEngagementDate": "2021-12-17",
+    "EngagementScore": 53,
+    "SubscriptionType": "VIP",
+    "ChurnStatus": "True"
+  },
+  {
+    "CustomerID": "C070",
+    "SignupDate": "2021-03-13",
+    "LastEngagementDate": "2023-06-14",
+    "EngagementScore": 8,
+    "SubscriptionType": "Premium",
+    "ChurnStatus": "True"
+  },
+  {
+    "CustomerID": "C071",
+    "SignupDate": "2022-10-19",
+    "LastEngagementDate": "2023-09-12",
+    "EngagementScore": 75,
+    "SubscriptionType": "Premium",
+    "ChurnStatus": "True"
+  },
+  {
+    "CustomerID": "C072",
+    "SignupDate": "2021-11-15",
+    "LastEngagementDate": "2022-08-12",
+    "EngagementScore": 1,
+    "SubscriptionType": "Basic",
+    "ChurnStatus": "True"
+  },
+  {
+    "CustomerID": "C073",
+    "SignupDate": "2022-12-22",
+    "LastEngagementDate": "2023-09-08",
+    "EngagementScore": 63,
+    "SubscriptionType": "Premium",
+    "ChurnStatus": "False"
+  },
+  {
+    "CustomerID": "C074",
+    "SignupDate": "2022-01-31",
+    "LastEngagementDate": "2023-11-04",
+    "EngagementScore": 40,
+    "SubscriptionType": "Premium",
+    "ChurnStatus": "False"
+  },
+  {
+    "CustomerID": "C075",
+    "SignupDate": "2021-01-18",
+    "LastEngagementDate": "2022-07-28",
+    "EngagementScore": 81,
+    "SubscriptionType": "VIP",
+    "ChurnStatus": "False"
+  },
+  {
+    "CustomerID": "C076",
+    "SignupDate": "2022-03-28",
+    "LastEngagementDate": "2023-04-22",
+    "EngagementScore": 25,
+    "SubscriptionType": "VIP",
+    "ChurnStatus": "True"
+  },
+  {
+    "CustomerID": "C077",
+    "SignupDate": "2021-08-13",
+    "LastEngagementDate": "2022-06-28",
+    "EngagementScore": 72,
+    "SubscriptionType": "Basic",
+    "ChurnStatus": "False"
+  },
+  {
+    "CustomerID": "C078",
+    "SignupDate": "2021-07-09",
+    "LastEngagementDate": "2023-03-05",
+    "EngagementScore": 22,
+    "SubscriptionType": "VIP",
+    "ChurnStatus": "False"
+  },
+  {
+    "CustomerID": "C079",
+    "SignupDate": "2021-03-20",
+    "LastEngagementDate": "2022-03-13",
+    "EngagementScore": 29,
+    "SubscriptionType": "VIP",
+    "ChurnStatus": "False"
+  },
+  {
+    "CustomerID": "C080",
+    "SignupDate": "2021-03-12",
+    "LastEngagementDate": "2023-10-26",
+    "EngagementScore": 44,
+    "SubscriptionType": "Basic",
+    "ChurnStatus": "False"
+  },
+  {
+    "CustomerID": "C081",
+    "SignupDate": "2021-08-23",
+    "LastEngagementDate": "2022-07-21",
+    "EngagementScore": 0,
+    "SubscriptionType": "Premium",
+    "ChurnStatus": "True"
+  },
+  {
+    "CustomerID": "C082",
+    "SignupDate": "2021-02-24",
+    "LastEngagementDate": "2023-03-07",
+    "EngagementScore": 37,
+    "SubscriptionType": "Premium",
+    "ChurnStatus": "False"
+  },
+  {
+    "CustomerID": "C083",
+    "SignupDate": "2022-03-18",
+    "LastEngagementDate": "2022-07-05",
+    "EngagementScore": 66,
+    "SubscriptionType": "Premium",
+    "ChurnStatus": "True"
+  },
+  {
+    "CustomerID": "C084",
+    "SignupDate": "2021-04-26",
+    "LastEngagementDate": "2022-01-14",
+    "EngagementScore": 0,
+    "SubscriptionType": "Basic",
+    "ChurnStatus": "True"
+  },
+  {
+    "CustomerID": "C085",
+    "SignupDate": "2022-10-18",
+    "LastEngagementDate": "2023-03-11",
+    "EngagementScore": 4,
+    "SubscriptionType": "Premium",
+    "ChurnStatus": "True"
+  },
+  {
+    "CustomerID": "C086",
+    "SignupDate": "2021-01-12",
+    "LastEngagementDate": "2023-10-01",
+    "EngagementScore": 87,
+    "SubscriptionType": "VIP",
+    "ChurnStatus": "False"
+  },
+  {
+    "CustomerID": "C087",
+    "SignupDate": "2021-12-29",
+    "LastEngagementDate": "2022-09-30",
+    "EngagementScore": 42,
+    "SubscriptionType": "VIP",
+    "ChurnStatus": "False"
+  },
+  {
+    "CustomerID": "C088",
+    "SignupDate": "2022-03-16",
+    "LastEngagementDate": "2023-09-11",
+    "EngagementScore": 17,
+    "SubscriptionType": "Basic",
+    "ChurnStatus": "True"
+  },
+  {
+    "CustomerID": "C089",
+    "SignupDate": "2021-03-28",
+    "LastEngagementDate": "2023-10-01",
+    "EngagementScore": 19,
+    "SubscriptionType": "VIP",
+    "ChurnStatus": "True"
+  },
+  {
+    "CustomerID": "C090",
+    "SignupDate": "2022-10-11",
+    "LastEngagementDate": "2023-04-14",
+    "EngagementScore": 6,
+    "SubscriptionType": "VIP",
+    "ChurnStatus": "False"
+  },
+  {
+    "CustomerID": "C091",
+    "SignupDate": "2021-02-19",
+    "LastEngagementDate": "2021-03-27",
+    "EngagementScore": 93,
+    "SubscriptionType": "Premium",
+    "ChurnStatus": "True"
+  },
+  {
+    "CustomerID": "C092",
+    "SignupDate": "2022-09-12",
+    "LastEngagementDate": "2023-09-09",
+    "EngagementScore": 3,
+    "SubscriptionType": "VIP",
+    "ChurnStatus": "False"
+  },
+  {
+    "CustomerID": "C093",
+    "SignupDate": "2022-04-22",
+    "LastEngagementDate": "2022-07-01",
+    "EngagementScore": 92,
+    "SubscriptionType": "Premium",
+    "ChurnStatus": "False"
+  },
+  {
+    "CustomerID": "C094",
+    "SignupDate": "2022-08-18",
+    "LastEngagementDate": "2023-04-19",
+    "EngagementScore": 51,
+    "SubscriptionType": "Premium",
+    "ChurnStatus": "False"
+  },
+  {
+    "CustomerID": "C095",
+    "SignupDate": "2021-02-09",
+    "LastEngagementDate": "2023-02-01",
+    "EngagementScore": 4,
+    "SubscriptionType": "Premium",
+    "ChurnStatus": "True"
+  },
+  {
+    "CustomerID": "C096",
+    "SignupDate": "2021-09-10",
+    "LastEngagementDate": "2022-12-09",
+    "EngagementScore": 59,
+    "SubscriptionType": "Basic",
+    "ChurnStatus": "False"
+  },
+  {
+    "CustomerID": "C097",
+    "SignupDate": "2021-03-21",
+    "LastEngagementDate": "2021-04-15",
+    "EngagementScore": 95,
+    "SubscriptionType": "VIP",
+    "ChurnStatus": "True"
+  },
+  {
+    "CustomerID": "C098",
+    "SignupDate": "2021-04-03",
+    "LastEngagementDate": "2023-08-13",
+    "EngagementScore": 24,
+    "SubscriptionType": "Premium",
+    "ChurnStatus": "False"
+  },
+  {
+    "CustomerID": "C099",
+    "SignupDate": "2022-11-18",
+    "LastEngagementDate": "2023-09-11",
+    "EngagementScore": 2,
+    "SubscriptionType": "Premium",
+    "ChurnStatus": "True"
+  },
+  {
+    "CustomerID": "C100",
+    "SignupDate": "2021-01-12",
+    "LastEngagementDate": "2021-11-27",
+    "EngagementScore": 57,
+    "SubscriptionType": "Premium",
+    "ChurnStatus": "True"
+  }
+]
