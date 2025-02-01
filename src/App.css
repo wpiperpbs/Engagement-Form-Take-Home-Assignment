@@ -1,12 +1,61 @@
 .app {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;  /* Align items to the left */
+  width: 5000px;
+  margin: 0;  /* Reset margin */
+  background-color: rgba(255, 255, 255, 0.906);
+  
+  
+}
+.logo-container {
+  display: flex;
+  flex-direction: column;  /* Stack logo and header vertically */
+  margin-top: 0px;  /* Space between logo and header */
+  margin-left: 675px;  /* Moves logo-container 100px to the right */
+  z-index: 10;  /* Ensure the logo is above the header */
+  margin-bottom: 650px;
+
 }
 
+.header-container {
+  z-index: 5; 
+  width: 5000px;
+  height: 225px;
+  background-color: #2638c4;
+  display: flex;
+  position: absolute;  /* Use absolute positioning */
+  top: 0;  /* Position it at the top */
+  right: 0;  /* Position it on the left */
+  justify-content: flex-end; /* This aligns the h1 to the right */
+  padding-top: 70px;
+  padding-right: 475px;
+}
+.form-container {
+  position: relative;  /* Changed from absolute to relative */
+  top: 200px;  /* Start below the header */
+  width: 5000px;  /* Ensure it takes the full width */
+  height: calc(100vh - 225px);  /* Fills remaining screen height */
+
+  display: flex;
+  flex-direction: column;
+
+}
+
+
+.logo {
+  z-index: 10;
+  width: 150px; /* Adjust the logo width */
+  height: auto; /* Maintain aspect ratio */
+  margin-top: 40px; /* Space between logo and header */
+}
 header {
-  margin-bottom: 2rem;
-  text-align: center;
+  width: 100%;
+ 
 }
 
-/* Add your custom styles below */
+header h1 {
+z-index: 6;
+margin: 0;
+}

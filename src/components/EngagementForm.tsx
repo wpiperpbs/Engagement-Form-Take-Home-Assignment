@@ -1,60 +1,148 @@
-// You'll need these imports when implementing the form:
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import type { EngagementFormData } from '../types/engagement';
 import { generateCustomerId } from '../utils/idGenerator';
-import { exportToCSV } from '../utils/csvExport';
+import { exportToCSV } from './csvExport';
+import './EngagementForm.css';
 
 export const EngagementForm = () => {
-  // TODO: Implement form state management
-  // Example:
-  // const [formData, setFormData] = useState<EngagementFormData>({
-  //   customerId: '', // This will be auto-generated on submission
-  //   signupDate: '',
-  //   lastEngagementDate: '',
-  //   engagementScore: 0,
-  //   subscriptionType: 'Basic',
-  //   churnStatus: false
-  // });
+  const [formData, setFormData] = useState<EngagementFormData>({
+    customerId: '',
+    signupDate: '',
+    lastEngagementDate: '',
+    engagementScore: 0,
+    subscriptionType: 'Basic',
+    churnStatus: false,
+  });
 
-  // TODO: Implement form submission handler
+  const [engagementData, setEngagementData] = useState<EngagementFormData[]>([]);
+  const [errorMessage, setErrorMessage] = useState('');
+  const [successMessage, setSuccessMessage] = useState('');
+
+  // Fetch JSON data from the public directory
+  useEffect(() => {
+    fetch('/mock-data/engagementData.json')
+      .then((response) => response.json())
+      .then((data) => setEngagementData(data))
+      .catch((error) => console.error('Error loading engagement data:', error));
+  }, []);
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Add form submission logic here
-    // Example:
-    // const newEntry = {
-    //   ...formData,
-    //   customerId: generateCustomerId()
-    // };
-    // exportToCSV(newEntry); // This will combine with mock data
-    
-    // Don't forget to:
-    // 1. Generate customer ID
-    // 2. Validate the form data
-    // 3. Export to CSV (will include mock data)
-    // 4. Clear the form
-    // 5. Show success message
-  };
-
-  return (
-    <form onSubmit={handleSubmit}>
-      {/* TODO: Implement form fields */}
-      {/* Example of a form field: */}
-      {/* <div>
-        <label htmlFor="signupDate">Signup Date:</label>
-        <input
-          type="date"
-          id="signupDate"
-          name="signupDate"
-          value={formData.signupDate}
-          onChange={(e) => setFormData(prev => ({
-            ...prev,
-            signupDate: e.target.value
-          }))}
-          required
-        />
-      </div> */}
+  
+    // Validate required fields
+    if (!formData.signupDate || !formData.lastEngagementDate || formData.engagementScore) {
+      setErrorMessage('Please fill out all required fields.');
+      return;
+    }
+  
+    if (new Date(formData.lastEngagementDate) < new Date(formData.signupDate)) {
+      setErrorMessage('Last Engagement Date cannot be earlier than Signup Date.');
+      return;
+    }
+  
+    // Create new entry with generated ID
+    const newEntry = {
+      ...formData,
+      customerId: generateCustomerId(),
+    };
+  
+    // Update the engagement data state first, then export to CSV
+    setEngagementData((prevData) => {
+      const updatedData = [newEntry, ...prevData];
       
-      <button type="submit">Submit</button>
-    </form>
+      // Export only AFTER the state update
+      setTimeout(() => exportToCSV(updatedData), 0);
+  
+      return updatedData;
+    });
+  
+    // Clear the form
+    setFormData({
+      customerId: '',
+      signupDate: '',
+      lastEngagementDate: '',
+      engagementScore: 0,
+      subscriptionType: 'Basic',
+      churnStatus: false,
+    });
+  
+    setSuccessMessage('Form submitted successfully!');
+    setErrorMessage('');
+  };
+  
+  return (
+    <div>
+      {errorMessage && <div className="error-message">{errorMessage}</div>}
+      {successMessage && <div className="success-message">{successMessage}</div>}
+
+      <form className="engagement-form" onSubmit={handleSubmit}>
+        <div className="form-group">
+          <label htmlFor="signupDate">Signup Date:</label>
+          <input
+            type="date"
+            id="signupDate"
+            value={formData.signupDate}
+            onChange={(e) => setFormData((prev) => ({ ...prev, signupDate: e.target.value }))}
+            required
+          />
+        </div>
+
+        <div className="form-group">
+          <label htmlFor="lastEngagementDate">Last Engagement Date:</label>
+          <input
+            type="date"
+            id="lastEngagementDate"
+            value={formData.lastEngagementDate}
+            onChange={(e) => setFormData((prev) => ({ ...prev, lastEngagementDate: e.target.value }))}
+            required
+          />
+        </div>
+
+        <div className="form-group">
+          <label htmlFor="engagementScore">Engagement Score:</label>
+          <input
+            type="number"
+            id="engagementScore"
+            value={formData.engagementScore}
+            onChange={(e) =>
+              setFormData((prev) => ({
+                ...prev,
+                engagementScore: Math.max(0, Math.min(Number(e.target.value), 100)),
+              }))
+            }
+            required
+          />
+        </div>
+
+        <div className="form-group">
+          <label htmlFor="subscriptionType">Subscription Type:</label>
+          <select
+            id="subscriptionType"
+            value={formData.subscriptionType}
+            onChange={(e) =>
+              setFormData((prev) => ({ ...prev, subscriptionType: e.target.value as 'Basic' | 'Premium' | 'VIP' }))
+            }
+          >
+            <option value="Basic">Basic</option>
+            <option value="Premium">Premium</option>
+            <option value="VIP">VIP</option>
+          </select>
+        </div>
+
+        <div className="form-group">
+          <label htmlFor="churnStatus">Churn Status:</label>
+          <select
+            id="churnStatus"
+            value={formData.churnStatus ? 'Active' : 'Inactive'}
+            onChange={(e) => setFormData((prev) => ({ ...prev, churnStatus: e.target.value === 'Active' }))}
+          >
+            <option value="Inactive">Inactive</option>
+            <option value="Active">Active</option>
+          </select>
+        </div>
+
+        <button type="submit">Submit</button>
+      </form>
+    </div>
   );
-}; 
+};
