@@ -2,6 +2,10 @@
 
 ## Process
    I started with doing some basic sketching which you can see below
+![20250201_142417](https://github.com/user-attachments/assets/03e52d5f-6b24-4f4e-933c-4a14d752e1f3)
+
+![20250201_142407](https://github.com/user-attachments/assets/4764d74f-931c-4ff2-a440-ed99efdaff78)
+
 
    Once I had a low fidelity mock up and I did the basic css and html to have a basic website 
       - I got the logo and colors from the online PBS Brand guide
@@ -12,7 +16,7 @@
     Various Testing happened in between
       - Mostly some Unit testing and Intregration done by hand
 
-## What I'd add wwhat more time
+## What I'd add with more time
 CSS Improvements
    - A little bit of weirdness happened with the centering and container overlap in the CSS stylings
    - With more time I'd hammer these out
