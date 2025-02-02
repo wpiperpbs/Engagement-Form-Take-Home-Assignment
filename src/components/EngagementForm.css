@@ -1,39 +1,44 @@
-/* Importing a cleaner font from Google Fonts */
+/**
+ * @file EngagementForm.css
+ * @description: Handles styling for the form component
+ * @author Destiny
+ * @date 2025-01-31
+*/
+
+/* Imports font from Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
 
 .engagement-form {
-z-index: 5;
-    display: flex;
+  z-index: 5;
+  display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start; 
   font-family: 'Roboto', sans-serif;
   font-size: 16px;
   color: black;
-  width: 100%;  /* Ensure the form doesn't stretch too wide */
-  max-width: 400px;  /* Restrict the form width to a reasonable size */
-  position: absolute;  /* Absolute positioning for precise control */
-  left: -90px;  /* Set the left position in pixels */
+  width: 100%;  
+  max-width: 400px;  
+  position: absolute;  
+  left: -90px;  
   right: 700px;
-  top: 100px;  /* Set the top position in pixels */
-  background-color: rgba(255, 255, 255, 0.906);  /* Light background */
+  top: 100px; 
+  background-color: rgba(255, 255, 255, 0.906);  
   padding: 20px;
-  border-radius: 8px;  /* Rounded corners */
-  box-shadow: 0px 0px 15px rgba(45, 115, 255, 0.1);  /* Subtle shadow for the form */
+  border-radius: 8px; 
+  box-shadow: 0px 0px 15px rgba(45, 115, 255, 0.1); 
 }
 
 .form-group {
-    
   display: flex;
-  flex-direction: column;  /* Aligning labels and inputs vertically */
+  flex-direction: column;  
   margin-bottom: 1rem;
 }
 
 label {
-  font-weight: normal;  /* Unbold the label */
-  margin-bottom: 5px;  /* Adds space between label and input */
-  font-size: 14px;  /* Smaller label text */
-  
+  font-weight: normal;  
+  margin-bottom: 5px;  
+  font-size: 14px;  
 }
 
 select, input {
@@ -42,14 +47,14 @@ select, input {
     font-size: 14px;
     border: 1px solid #000000;
     border-radius: 5px;
-    width: 100%;  /* Ensure inputs don't stretch too wide */
-    box-sizing: border-box;  /* Prevent padding from affecting width */
-    background-color: transparent; /* Make the background transparent */
-    color: black;  /* Ensure text is visible */
+    width: 100%;  
+    box-sizing: border-box;  
+    background-color: transparent; 
+    color: black;  
   }
   
   select:focus, input:focus {
-    border-color: #007BFF;  /* Focus border color */
+    border-color: #007BFF; 
     outline: none;
   }
   
@@ -67,19 +72,18 @@ button {
 }
 
 button:hover {
-  background-color: #0056b3;  /* Darker button color on hover */
+  background-color: #0056b3;  
 }
 
-/* Optional: Add some styles for error and success messages */
 .error-message, .success-message {
     padding: 10px;
     width: 200px;
-    margin-top: 0; /* Remove margin-top */
-    margin-bottom: 0; /* Remove margin-bottom */
+    margin-top: 0; 
+    margin-bottom: 0;
     border-radius: 5px;
-    position: absolute; /* This will take the messages out of the normal flow */
-    top: 10px; /* Adjust this value to place it where you want */
-    left: 0px;  /* Centers the message horizontally */
+    position: absolute;
+    top: 10px; 
+    left: 0px;  
     
   
 }

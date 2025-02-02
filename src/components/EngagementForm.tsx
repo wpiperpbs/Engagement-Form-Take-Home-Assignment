@@ -1,9 +1,20 @@
+/**
+ * @file EngagementForm.tsx
+ * @description Main component handling the form's implementation and exporting of data
+ * @author Destiny
+ * @date 2025-01-31
+ * 
+ * @notes
+ * Component handles key functionality of the program
+ */
+
 import { useState, useEffect } from 'react';
 import type { EngagementFormData } from '../types/engagement';
 import { generateCustomerId } from '../utils/idGenerator';
 import { exportToCSV } from '../utils/csvExport';
 import './EngagementForm.css';
 
+// basic set up
 export const EngagementForm = () => {
   const [formData, setFormData] = useState<EngagementFormData>({
     customerId: '',
@@ -52,13 +63,13 @@ export const EngagementForm = () => {
       customerId: generateCustomerId(),
     };
   
-    // Correctly update the array state
+  // handling the data
     setEngagementData((prevData) => [...prevData, newEntry]);
   
-    // Ensure only one object is passed to exportToCSV
+
     exportToCSV(newEntry); 
   
-    // Reset form
+    // clear form
     setFormData({
       customerId: '',
       signupDate: '',
@@ -67,12 +78,13 @@ export const EngagementForm = () => {
       subscriptionType: 'Basic',
       churnStatus: false,
     });
-  
+  // Send correct message
     setSuccessMessage('Form submitted successfully!');
     setErrorMessage('');
   };  
   
   return (
+    // code for the form
     <div>
       {errorMessage && <div className="error-message">{errorMessage}</div>}
       {successMessage && <div className="success-message">{successMessage}</div>}
@@ -141,7 +153,6 @@ export const EngagementForm = () => {
             <option value="Active">Active</option>
           </select>
         </div>
-
         <button type="submit">Submit</button>
       </form>
     </div>
