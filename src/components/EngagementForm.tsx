@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import type { EngagementFormData } from '../types/engagement';
 import { generateCustomerId } from '../utils/idGenerator';
-import { exportToCSV } from './csvExport';
+import { exportToCSV } from '../utils/csvExport';
 import './EngagementForm.css';
 
 export const EngagementForm = () => {
@@ -26,11 +26,18 @@ export const EngagementForm = () => {
       .catch((error) => console.error('Error loading engagement data:', error));
   }, []);
 
+  // Automatically clear success message after 3 seconds
+  useEffect(() => {
+    if (successMessage) {
+      const timer = setTimeout(() => setSuccessMessage(''), 3000);
+      return () => clearTimeout(timer);
+    }
+  }, [successMessage]);
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
   
-    // Validate required fields
-    if (!formData.signupDate || !formData.lastEngagementDate || formData.engagementScore) {
+    if (!formData.signupDate || !formData.lastEngagementDate || formData.engagementScore === 0) {
       setErrorMessage('Please fill out all required fields.');
       return;
     }
@@ -40,23 +47,18 @@ export const EngagementForm = () => {
       return;
     }
   
-    // Create new entry with generated ID
-    const newEntry = {
+    const newEntry: EngagementFormData = {
       ...formData,
       customerId: generateCustomerId(),
     };
   
-    // Update the engagement data state first, then export to CSV
-    setEngagementData((prevData) => {
-      const updatedData = [newEntry, ...prevData];
-      
-      // Export only AFTER the state update
-      setTimeout(() => exportToCSV(updatedData), 0);
+    // Correctly update the array state
+    setEngagementData((prevData) => [...prevData, newEntry]);
   
-      return updatedData;
-    });
+    // Ensure only one object is passed to exportToCSV
+    exportToCSV(newEntry); 
   
-    // Clear the form
+    // Reset form
     setFormData({
       customerId: '',
       signupDate: '',
@@ -68,7 +70,7 @@ export const EngagementForm = () => {
   
     setSuccessMessage('Form submitted successfully!');
     setErrorMessage('');
-  };
+  };  
   
   return (
     <div>
@@ -134,8 +136,7 @@ export const EngagementForm = () => {
           <select
             id="churnStatus"
             value={formData.churnStatus ? 'Active' : 'Inactive'}
-            onChange={(e) => setFormData((prev) => ({ ...prev, churnStatus: e.target.value === 'Active' }))}
-          >
+            onChange={(e) => setFormData((prev) => ({ ...prev, churnStatus: e.target.value === 'Active' }))}>
             <option value="Inactive">Inactive</option>
             <option value="Active">Active</option>
           </select>
