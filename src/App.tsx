@@ -12,16 +12,16 @@ function App() {
   return (
     <div className="app">
       <div className="logo-container">
-        /* Display logo*/
+      {/* Display logo*/}
         <img src={logo} alt="PBS Logo" className="logo" />
 
        <div className="header-container">
-          /* Display Header*/
+          {/* Display Header*/}
           <h1>User Engagement Form</h1>
        </div>
 
        <div className="form-container">
-         /* Display Form*/
+         {/* Display Form*/}
          <EngagementForm />
         </div>
       </div>
