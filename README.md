@@ -16,7 +16,7 @@
     Various Testing happened in between
       - Mostly some Unit testing and Intregration done by hand
 
-## What I'd add wwhat more time
+## What I'd add with more time
 CSS Improvements
    - A little bit of weirdness happened with the centering and container overlap in the CSS stylings
    - With more time I'd hammer these out
