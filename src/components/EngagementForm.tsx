@@ -7,14 +7,15 @@ import Input from './ui/Input';
 import TabsSelect from './ui/TabsSelect';
 import { SubmitHandler, useForm } from 'react-hook-form';
 
+// Regex to validate date format
 const dateRegex = /^\d{4}-\d{2}-\d{2}$/;
 
-const subscriptionTypes: Tab[] = [
+// Define the subscription and churn status options for tabs
+const subscriptionOptions: Tab[] = [
   { id: 'basic', label: 'Basic' },
   { id: 'premium', label: 'Premium' },
   { id: 'enterprise', label: 'Enterprise' }
 ]
-
 const churnStatusOptions: Tab[] = [
   { id: 'inactive', label: 'Inactive' },
   { id: 'active', label: 'Active' }
@@ -22,6 +23,7 @@ const churnStatusOptions: Tab[] = [
 
 export const EngagementForm = () => {
 
+  // Define the form with react-hook-form
   const { register, 
     handleSubmit, 
     formState: { errors, isSubmitting }, 
@@ -38,12 +40,14 @@ export const EngagementForm = () => {
     }
   });
 
+  // Watch values for use in validation and input components
   const currentEngagementScore = watch('engagementScore');
   const currentSignupDate = watch('signupDate');
 
   const [successMessage, setSuccessMessage] = useState<string | null>(null);
 
 
+  // Create customer ID, export to CSV, and reset form on submit
   const onSubmit: SubmitHandler<EngagementFormData> = (formData) => {
     const formDataWithCustomerId: EngagementFormData = {
       ...formData,
@@ -77,7 +81,7 @@ export const EngagementForm = () => {
       <div className='formGroup'>
         <label htmlFor="subscriptionType">Subscription Type</label>
         <TabsSelect 
-          tabs={subscriptionTypes}
+          tabs={subscriptionOptions}
           name='subscriptionType'
           label='Subscription Type'
           register={register}
