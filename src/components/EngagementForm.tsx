@@ -1,60 +1,176 @@
 // You'll need these imports when implementing the form:
 import { useState } from 'react';
-import type { EngagementFormData } from '../types/engagement';
+import type { EngagementFormData, SubscriptionType, Tab } from '../types/engagement';
 import { generateCustomerId } from '../utils/idGenerator';
 import { exportToCSV } from '../utils/csvExport';
+import Input from './ui/Input';
+import TabsSelect from './ui/TabsSelect';
+import { SubmitHandler, useForm } from 'react-hook-form';
+
+const dateRegex = /^\d{4}-\d{2}-\d{2}$/;
+
+const subscriptionTypes: Tab[] = [
+  { id: 'basic', label: 'Basic' },
+  { id: 'premium', label: 'Premium' },
+  { id: 'enterprise', label: 'Enterprise' }
+]
+
+const churnStatusOptions: Tab[] = [
+  { id: 'inactive', label: 'Inactive' },
+  { id: 'active', label: 'Active' }
+]
 
 export const EngagementForm = () => {
-  // TODO: Implement form state management
-  // Example:
-  // const [formData, setFormData] = useState<EngagementFormData>({
-  //   customerId: '', // This will be auto-generated on submission
-  //   signupDate: '',
-  //   lastEngagementDate: '',
-  //   engagementScore: 0,
-  //   subscriptionType: 'Basic',
-  //   churnStatus: false
-  // });
 
-  // TODO: Implement form submission handler
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Add form submission logic here
-    // Example:
-    // const newEntry = {
-    //   ...formData,
-    //   customerId: generateCustomerId()
-    // };
-    // exportToCSV(newEntry); // This will combine with mock data
-    
-    // Don't forget to:
-    // 1. Generate customer ID
-    // 2. Validate the form data
-    // 3. Export to CSV (will include mock data)
-    // 4. Clear the form
-    // 5. Show success message
+  const { register, 
+    handleSubmit, 
+    formState: { errors, isSubmitting }, 
+    watch, 
+    setValue,
+    reset,
+  } = useForm<EngagementFormData> ({
+    defaultValues: {
+      signupDate: '',
+      lastEngagementDate: '',
+      engagementScore: 0,
+      subscriptionType: 'basic' as SubscriptionType,
+      churnStatus: 'inactive'
+    }
+  });
+
+  const currentEngagementScore = watch('engagementScore');
+  const currentSignupDate = watch('signupDate');
+
+  const [successMessage, setSuccessMessage] = useState<string | null>(null);
+
+
+  const onSubmit: SubmitHandler<EngagementFormData> = (formData) => {
+    const formDataWithCustomerId: EngagementFormData = {
+      ...formData,
+      customerId: generateCustomerId()
+    };
+    setSuccessMessage('Form submitted successfully!');
+    exportToCSV(formDataWithCustomerId);
+    reset();
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      {/* TODO: Implement form fields */}
-      {/* Example of a form field: */}
-      {/* <div>
+    <form className='engagementForm' onSubmit={handleSubmit(onSubmit)}>
+      <div className='formGroup'>
         <label htmlFor="signupDate">Signup Date:</label>
-        <input
-          type="date"
-          id="signupDate"
-          name="signupDate"
-          value={formData.signupDate}
-          onChange={(e) => setFormData(prev => ({
-            ...prev,
-            signupDate: e.target.value
-          }))}
-          required
+        <Input 
+          id='signupDate'
+          type='date' 
+          {...register('signupDate', { 
+            required: "This field is required",
+            validate: (value) => {
+              if (!dateRegex.test(value)) {
+                return 'Date must be in YYYY-MM-DD format';
+              }
+              return true;
+            }
+          })}
         />
-      </div> */}
-      
-      <button type="submit">Submit</button>
+        <p className='form-error'>{errors.signupDate?.message}</p>
+      </div>
+
+      <div className='formGroup'>
+        <label htmlFor="subscriptionType">Subscription Type</label>
+        <TabsSelect 
+          tabs={subscriptionTypes}
+          name='subscriptionType'
+          label='Subscription Type'
+          register={register}
+          watch={watch}
+        />
+        <p className='form-error'>{errors.subscriptionType?.message}</p>
+      </div>
+
+      <div className='formGroup'>
+        <label htmlFor="engagementScore">Engagement Score:</label>
+        <div className='sideBySideInputs'>
+          <Input
+            style={{ width: 'min-content' }}
+            id='engagementScoreInput'
+            aria-label="Engagement score number input"
+            type='number'
+            min={0}
+            max={100}
+            value={currentEngagementScore}
+            {...register('engagementScore', {
+              required: "This field is required",
+              min: { value: 0, message: "Engagement score must be at least 0" },
+              max: { value: 100, message: "Engagement score must be at most 100" }
+            })}
+            onChange={(e) => {
+              const value = parseInt(e.target.value) || 0;
+                setValue("engagementScore", value > 100 ? 100 : value, {
+                shouldValidate: true,
+              });
+            }}
+          />
+          <Input
+            style={{ padding: '0', color: 'black' }}
+            id='engagementScoreSlider'
+            aria-label="Engagement score slider"
+            aria-valuenow={currentEngagementScore}
+            min={0}
+            max={100}
+            type='range'
+            value={currentEngagementScore}
+            {...register('engagementScore', {
+              required: "This field is required",
+              min: { value: 0, message: "Engagement score must be at least 0" },
+              max: { value: 100, message: "Engagement score must be at most 100" }
+            })}
+            onChange={(e) => {
+              const value = parseInt(e.target.value) || 0;
+              setValue("engagementScore", value > 100 ? 100 : value, {
+                shouldValidate: true,
+              });
+            }}
+          />
+        </div>
+        <p className='form-error'>{errors.engagementScore?.message}</p>
+      </div>
+
+      <div className='formGroup'>
+        <label htmlFor="lastEngagementDate">Last Engagement Date:</label>
+        <Input
+          id='lastEngagementDate'
+          type='date'
+          {...register('lastEngagementDate', { 
+            required: "This field is required", 
+            validate: (value) => {
+              if(value <= currentSignupDate) {
+                return 'Last engagement date must be after signup date';
+              }
+              if (!dateRegex.test(value)) {
+                return 'Date must be in YYYY-MM-DD format';
+              }
+              return true;
+            }
+          })}
+        />
+        <p className='form-error'>{errors.lastEngagementDate?.message}</p>
+      </div>
+
+      <div className='formGroup'>
+        <label htmlFor="churnStatus">Churn Status:</label>
+        <TabsSelect
+          tabs={churnStatusOptions}
+          name='churnStatus'
+          label='Churn Status'
+          register={register}
+          watch={watch}
+        />
+        <p className='form-error'>{errors.churnStatus?.message}</p>
+      </div>
+
+      <div className='formGroup'>
+        <button type="submit" disabled={isSubmitting} >Submit</button>
+        <p className='form-success'>{successMessage}</p>
+      </div>
     </form>
   );
 }; 
