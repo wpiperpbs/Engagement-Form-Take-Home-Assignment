@@ -10,3 +10,90 @@ header {
 }
 
 /* Add your custom styles below */
+
+.engagementForm {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.formGroup {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  box-sizing: border-box;
+  color: #9e9e9e;
+}
+
+.form-error {
+  color: #ff4d4d;
+  font-size: 0.85em;
+  margin: 0;
+}
+
+.form-success {
+  color: #00cc66;
+  font-size: 0.85em;
+  margin: 0;
+  height: 1rem; /* Prevent layout shift */
+}
+
+.sideBySideInputs {
+  display: flex;
+  gap: 1rem;
+}
+
+
+
+
+.customInput {
+  width: 100%;  
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.5rem 1.25rem;
+  font-size: 1em;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  transition: border-color 0.25s;
+  box-sizing: border-box;
+}
+.customInput:hover {
+  border-color: #646cff;
+}
+
+.customInput:focus,
+.customInput:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+
+.tabsSelectContainer {
+  display: flex;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  color: #9e9e9e;
+  background: #1a1a1a;
+}
+
+.tabButton {
+  flex: 1;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  background: #007BFF; 
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.activeTab {
+  background: #007BFF; 
+  color: white; 
+}
+
+.inactiveTab {
+  background: transparent; 
+  color: #9e9e9e;
+}
