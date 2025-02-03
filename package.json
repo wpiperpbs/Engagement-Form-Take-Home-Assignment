@@ -2,14 +2,16 @@
   "name": "engagement-form-take-home-assignment",
   "private": true,
   "version": "0.0.0",
+  "homepage": "https://CalamitousCoder.github.io/submission-Destiny-Hale",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc -b && vite build",
-    "lint": "eslint .",
-    "preview": "vite preview",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d dist",
+    "start": "vite",
+    "build": "vite build",
+    "dev": "vite",
+    "lint": "eslint .",
+    "preview": "vite preview"
   },
   "dependencies": {
     "file-saver": "^2.0.5",
@@ -30,6 +32,5 @@
     "typescript": "~5.6.2",
     "typescript-eslint": "^8.18.2",
     "vite": "^6.0.5"
-  },
-  "homepage": "http://CalamitousCoder.github.io/submission-Destiny-Hale"
+  }
 }
