@@ -164,17 +164,6 @@ export const EngagementForm = () => {
 
         <button type="submit">Submit</button>
       </form>
-
-      <div>
-        <h3>Mock Engagement Data:</h3>
-        <ul>
-          {dataEntries.map((entry) => (
-            <li key={entry.customerId}>
-              {entry.customerId} - {entry.signupDate} - {entry.subscriptionType}
-            </li>
-          ))}
-        </ul>
-      </div>
     </div>
   );
 };
